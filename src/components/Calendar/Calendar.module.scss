@@ -1,0 +1,51 @@
+.calendar {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 5rem auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 200px);
+  gap: 10px;
+}
+
+.calendarHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.calendarHeadingText {
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.calendarActionBtn {
+  background-color: white;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+
+  &:active {
+    background-color: #e0e0e0;
+  }
+
+}
+
+.weekDay {
+  width: 100px;
+  height: 40px;
+}

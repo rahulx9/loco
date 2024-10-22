@@ -1,0 +1,44 @@
+.date {
+  min-height: 200px;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+
+  &:first-child {
+    grid-column-start: var(--start-column)
+  }
+}
+
+.eventWrapper {
+  width: 100%;
+}
+
+.event {
+  background-color: #ffcc00;
+  padding: 5px 10px;
+  border-radius: 20px;
+  width: 90%;
+  margin: 5px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+}
+
+.eventTitle {
+  background-color: #ffcc00;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.eventDeleteBtn {
+  background-color: inherit;
+  border: none;
+  border-radius: 100%;
+  padding: 5px 10px;
+  cursor: pointer;
+}
