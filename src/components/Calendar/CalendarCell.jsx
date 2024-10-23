@@ -1,5 +1,7 @@
+import { deleteEvent } from "../../context/EventContext/reducer/eventActions";
 import { useEventContext } from "../../context/EventContext/hooks/useEventContext";
 import styles from "./CalendarCell.module.scss";
+import { WEEK_DAYS } from "../../constants/calander";
 
 const CalendarCell = ({
   day,
@@ -17,10 +19,7 @@ const CalendarCell = ({
   const handleRemoveEvent = (e, calEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    dispatch({
-      type: "DELETE_EVENT",
-      payload: calEvent.id,
-    });
+    dispatch(deleteEvent(calEvent.id));
   };
 
   const handleEditEvent = (e, calEvent) => {
@@ -36,7 +35,10 @@ const CalendarCell = ({
       className={styles.date}
       onClick={() => handleDateClick(date)}
     >
-      {day}
+      <div className={styles.dateLabel}>
+        <span className={styles.weekLabel}>{WEEK_DAYS[date.getDay()]}</span>
+        {day}
+      </div>
       <div className={styles.eventWrapper}>
         {state.events
           .filter(

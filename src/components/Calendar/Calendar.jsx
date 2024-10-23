@@ -36,7 +36,7 @@ const Calendar = () => {
           className={styles.calendarActionBtn}
           onClick={() => changeMonth(-1)}
         >
-          Previous Month
+          &lt;
         </button>
         <h2 className={styles.calendarHeadingText}>
           {getMonthYearString(currentYear, currentMonth)}
@@ -45,10 +45,10 @@ const Calendar = () => {
           className={styles.calendarActionBtn}
           onClick={() => changeMonth(1)}
         >
-          Next Month
+          &gt;
         </button>
       </div>
-      <div className={styles.grid}>
+      <div className={`${styles.grid} ${styles.weekDayHeading}`}>
         {WEEK_DAYS.map((day) => (
           <div key={day} className={styles.weekDay}>
             {day}
